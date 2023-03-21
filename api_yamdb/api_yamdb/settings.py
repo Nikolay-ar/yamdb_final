@@ -68,21 +68,21 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 # }
 
 DATABASES = {
-    'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
-    'NAME': os.getenv('DB_NAME', default='postgres'),
-    'USER': os.getenv('POSTGRES_USER', default='postgres'),
-    'PASSWORD': os.getenv('POSTGRES_PASSWORD', default=None),
-    'HOST': os.getenv('DB_HOST', default='db'),
-    'PORT': os.getenv('DB_PORT', default='5432')
+    'default': {
+        'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+        'NAME': os.getenv('DB_NAME', default='postgres'),
+        'USER': os.getenv('POSTGRES_USER', default='postgres'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', default=None),
+        'HOST': os.getenv('DB_HOST', default='db'),
+        'PORT': os.getenv('DB_PORT', default='5432')
 
-    # 'default': {
     #     'ENGINE': "django.db.backends.postgresql",
     #     'NAME': "postgres",
     #     'USER': "postgres",
     #     'PASSWORD': "postgres",
     #     'HOST': "db",
     #     'PORT': "5432"
-    # }
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
