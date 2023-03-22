@@ -1,3 +1,4 @@
+
 # Проект API_YAMDB собирает отзывы пользователей на различные произведения.
 Проект создавали:
 * ### Андрей Мельников
@@ -20,6 +21,9 @@
 
 В данном проекте использованы технологии:
 Docker, Python, Django, DRF, Api, Postman
+
+![example workflow](https://github.com/Nikolay-ar/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+
 ## Как запустить проект:
 
 Клонировать репозиторий и перейти в него в командной строке:
