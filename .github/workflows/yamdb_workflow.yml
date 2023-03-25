@@ -1,9 +1,9 @@
 name: Django-app workflow
 
-on: [push]
-#on:
-#  push:
-#    branches: [ main ]
+#on: [push]
+on:
+  push:
+    branches: [ master ]
 
 jobs:
   tests:
@@ -78,7 +78,8 @@ jobs:
           sudo docker pull delonart/api_yamdb
           #остановка всех контейнеров
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 delonart/api_yamdb
+#          sudo docker run --rm -d -p 5000:5000 delonart/api_yamdb
+          sudo docker run --rm -d -p 8000:8000 delonart/api_yamdb
 
   send_message:
     runs-on: ubuntu-latest
@@ -90,4 +91,3 @@ jobs:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: ${{ github.workflow }} успешно выполнен!
-
