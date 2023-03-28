@@ -17,7 +17,7 @@
   * комментариев,
   * рейтинг произведений.
   
-  Упаковывает приложение в контейнер
+  Упаковывает приложение в контейнер + Deploy
 
 В данном проекте использованы технологии:
 Docker, Python, Django, DRF, Api, Postman
@@ -29,7 +29,7 @@ Docker, Python, Django, DRF, Api, Postman
 Клонировать репозиторий и перейти в него в командной строке:
 
 ```
-git clone https://git@github.com:Nikolay-ar/infra_sp2.git
+git clone https://git@github.com:Nikolay-ar/yamdb_final.git
 ```
 
 Перейти в папку infra:
@@ -79,24 +79,24 @@ docker-compose exec web python manage.py collectstatic --no-input
 docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
-Теперь проект доступен по адресу http://localhost/
+Теперь проект доступен по адресу http://158.160.20.67/redoc
 
 ## Примеры запросов: ##
 Вход в админ панель:
->**POST** http://localhost/admin/
+>**POST** http://158.160.20.67/admin/
 > 
 Регистрация нового пользователя:
->**POST** http://localhost/api/v1/signup/
+>**POST** http://158.160.20.67/api/v1/signup/
 
 Для получения токена отправьте логин и код, который пришел вам на электронную 
 почту:
->**POST** http://localhost/api/v1/auth/token/
+>**POST** http://158.160.20.67/api/v1/auth/token/
 
 Получение списка произведений:
->**GET** http://localhost/api/v1/titles/
+>**GET** http://158.160.20.67/api/v1/titles/
 
 Создание публикации (только администратор):
->**POST** http://localhost/api/v1/titles/
+>**POST** http://158.160.20.67/api/v1/titles/
 > 
 ```
 {
@@ -111,16 +111,16 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 Получение списка категорий:
->**GET** http://localhost/api/v1/categories/
+>**GET** http://http://158.160.20.67/api/v1/titles//api/v1/categories/
 
 Получение списка жанров:
->**GET** http://localhost/api/v1/genre/
+>**GET** http://http://158.160.20.67/api/v1/titles//api/v1/genre/
 
 Просмотр отзывов на произведение:
->**GET** http://localhost/api/v1/titles/{title_id}/reviews/
+>**GET** http://http://158.160.20.67/api/v1/titles//api/v1/titles/{title_id}/reviews/
 
 Создание отзывов на произведение:
->**POST** http://localhost/api/v1/titles/{title_id}/reviews/
+>**POST** http://http://158.160.20.67/api/v1/titles//api/v1/titles/{title_id}/reviews/
 ```
 {
 "text": "string",
@@ -129,14 +129,14 @@ docker-compose exec web python manage.py loaddata fixtures.json
 ```
 
 Просмотр комментариев к отзыву:
->**GET** http://localhost/api/v1/titles/{title_id}/reviews/{review_id}/commenta/
+>**GET** http://http://158.160.20.67/api/v1/titles//api/v1/titles/{title_id}/reviews/{review_id}/commenta/
 
 Создание комментария к отзыву:
->**Post** http://localhost/api/v1/titles/{title_id}/reviews/{review_id}/commenta/
+>**Post** http://http://158.160.20.67/api/v1/titles//api/v1/titles/{title_id}/reviews/{review_id}/commenta/
 ```
 {
 "text": "string"
 }
 ```
 Остальные запросы можно посмотреть в документации для API Yamdb:
-> http://localhost/redoc/
+> http://http://158.160.20.67/api/v1/titles//redoc/
